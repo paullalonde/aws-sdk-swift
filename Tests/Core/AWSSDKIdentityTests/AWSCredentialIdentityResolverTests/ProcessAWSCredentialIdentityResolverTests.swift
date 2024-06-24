@@ -7,7 +7,6 @@
 
 import XCTest
 import struct AWSSDKIdentity.ProcessAWSCredentialIdentityResolver
-@_spi(FileBasedConfig) @testable import AWSClientRuntime
 
 // Test fails on CI build with macos-11, Xcode_13.2.1, platform=iOS Simulator but not on later versions
 // ProcessCredentialsProvider is not useful on iOS platform so this test will remain disabled for now

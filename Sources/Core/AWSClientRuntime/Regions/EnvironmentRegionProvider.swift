@@ -4,7 +4,9 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
+
 import class Foundation.ProcessInfo
+import protocol AWSSDKCommon.Environment
 
 public struct EnvironmentRegionProvider: RegionProvider {
     private let AWS_ENVIRON_REGION = "AWS_REGION"

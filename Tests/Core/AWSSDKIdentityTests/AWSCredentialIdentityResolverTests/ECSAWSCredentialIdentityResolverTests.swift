@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import protocol AWSClientRuntime.Environment
+import protocol AWSSDKCommon.Environment
 import struct AWSSDKIdentity.ECSAWSCredentialIdentityResolver
 
 class ECSAWSCredentialIdentityResolverTests: XCTestCase {
@@ -53,11 +53,7 @@ class ECSAWSCredentialIdentityResolverTests: XCTestCase {
     }
 }
 
-protocol EnvironmentProvider {
-    func environmentVariable(key: String) -> String?
-}
-
-class MockEnvironment: Environment, EnvironmentProvider {
+class MockEnvironment: Environment {
     let relativeURI: String?
     let absoluteURI: String?
 

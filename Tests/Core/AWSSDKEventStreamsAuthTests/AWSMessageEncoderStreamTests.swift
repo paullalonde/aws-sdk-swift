@@ -16,7 +16,6 @@ import AWSSDKEventStreamsAuth
 import XCTest
 import AwsCommonRuntimeKit
 import ClientRuntime
-@testable import AWSClientRuntime
 
 final class AWSMessageEncoderStreamTests: XCTestCase {
     let baseStream = AsyncThrowingStream<TestEvent, Error> { continuation in

@@ -121,17 +121,17 @@ let package = Package(
         ),
         .testTarget(
             name: "AWSSDKEventStreamsAuthTests",
-            dependencies: ["AWSClientRuntime", "AWSSDKEventStreamsAuth", .smithyStreams],
+            dependencies: [.awsSDKEventStreamsAuth, .smithyStreams],
             path: "./Tests/Core/AWSSDKEventStreamsAuthTests"
         ),
         .testTarget(
             name: "AWSSDKHTTPAuthTests",
-            dependencies: ["AWSSDKHTTPAuth", "AWSClientRuntime", "AWSSDKEventStreamsAuth", .crt, .clientRuntime, .smithyTestUtils],
+            dependencies: [.awsSDKHTTPAuth, .awsSDKEventStreamsAuth, .crt, .clientRuntime, .smithyTestUtils],
             path: "./Tests/Core/AWSSDKHTTPAuthTests"
         ),
         .testTarget(
             name: "AWSSDKIdentityTests",
-            dependencies: [.smithy, .smithyIdentity, "AWSSDKIdentity", .awsClientRuntime],
+            dependencies: [.awsSDKIdentity, .awsSDKCommon, .smithy, .smithyIdentity],
             path: "./Tests/Core/AWSSDKIdentityTests",
             resources: [.process("Resources")]
         )
@@ -747,7 +747,7 @@ let serviceTargets: [String] = [
 ]
 
 // Uncomment this line to enable all services
-addAllServices()
+// addAllServices()
 
 let servicesWithIntegrationTests: [String] = [
     "AWSCloudFrontKeyValueStore",
