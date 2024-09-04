@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "container:">
+   </FileRef>
+   <FileRef
+      location = "group:../../aws-sdk-swift">
+   </FileRef>
+   <FileRef
+      location = "group:../../smithy-swift">
+   </FileRef>
+</Workspace>

@@ -1,6 +1,9 @@
 # Finder config files
 .DS_Store
 
+# Xcode workspace user settings
+xcuserdata/
+
 # Build script products
 /dist
 out/
