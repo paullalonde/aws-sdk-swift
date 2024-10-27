@@ -482,13 +482,14 @@ private func productForService(_ service: String) -> Product {
 
 private var clientRuntimeDependency: Package.Dependency {
     let path = "../smithy-swift"
-    let gitURL = "https://github.com/smithy-lang/smithy-swift"
-    let useLocalDeps = ProcessInfo.processInfo.environment["AWS_SWIFT_SDK_USE_LOCAL_DEPS"] != nil
-    return useLocalDeps ? .package(path: path) : .package(url: gitURL, exact: clientRuntimeVersion)
+    // let gitURL = "https://github.com/smithy-lang/smithy-swift"
+    // let useLocalDeps = ProcessInfo.processInfo.environment["AWS_SWIFT_SDK_USE_LOCAL_DEPS"] != nil
+    // return useLocalDeps ? .package(path: path) : .package(url: gitURL, exact: clientRuntimeVersion)
+    return .package(path: path)
 }
 
 private var crtDependency: Package.Dependency {
-    .package(url: "https://github.com/awslabs/aws-crt-swift", exact: crtVersion)
+    .package(path: "../aws-crt-swift")
 }
 
 private var doccDependencyOrNil: Package.Dependency? {
